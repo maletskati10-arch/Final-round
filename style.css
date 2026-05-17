@@ -60,7 +60,8 @@ nav a:hover {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    /* text-shadow не працює з -webkit-text-fill-color: transparent; замінено на filter */
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
 }
 .hero p {
     font-size: 1.3rem;
@@ -135,6 +136,8 @@ nav a:hover {
 }
 /* Факти */
 .fact-card {
+    position: relative;
+    overflow: hidden;
     background: linear-gradient(145deg, #2d2d5a, #252547);
     border-left: 4px solid #f7c531;
 }
@@ -146,10 +149,6 @@ nav a:hover {
     position: absolute;
     top: 1rem;
     right: 1.5rem;
-}
-.fact-card {
-    position: relative;
-    overflow: hidden;
 }
 /* Секції */
 section {
